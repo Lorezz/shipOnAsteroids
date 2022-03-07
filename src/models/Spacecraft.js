@@ -1,19 +1,10 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
 
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF('/Spacecraft Speeder.glb');
-  // useFrame(
-  //   () =>
-  //     (group.current.position.x = THREE.MathUtils.lerp(
-  //       group.current.position.x,
-  //       group.current.position.y - 0.1,
-  //       0.1
-  //     ))
-  // );
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[-2, 0, -1.5]} scale={10}>

@@ -6,8 +6,8 @@ import Spacecraft from './models/Spacecraft';
 
 export default function Viewer() {
   return (
-    <Suspense fallback={null}>
-      <Canvas shadows camera>
+    <Canvas shadows camera>
+      <Suspense fallback={null}>
         <Stars
           radius={50}
           depth={25}
@@ -27,8 +27,8 @@ export default function Viewer() {
           depth={10} // Z-dir depth
           segments={10} // Number of particles
         />
-      </Canvas>
-      <OrbitControls autoRotate autoRotateSpeed={0.2} />
-    </Suspense>
+        <OrbitControls autoRotate autoRotateSpeed={0.2} />
+      </Suspense>
+    </Canvas>
   );
 }
